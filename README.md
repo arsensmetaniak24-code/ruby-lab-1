@@ -1,1 +1,1 @@
-# ruby-lab-1
+# First Lab of "Programming with Ruby"

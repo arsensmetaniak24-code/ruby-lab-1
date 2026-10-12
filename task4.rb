@@ -17,3 +17,8 @@ result = transactions
            .group_by{|tr| tr[:merchant]}
            .transform_values {|trs| trs.sum {|tr| tr[:amount]}}
 puts result
+
+result = transactions.each_with_object(Hash.new(0)) {
+  |tr, totals| totals[tr[:merchant]] += tr[:amount]
+}
+puts result
